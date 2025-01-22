@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <title>Ran de wu</title>
+    <link rel="stylesheet" href="css1.css">
+</head>
+<body>
+    <section id="naglowek">
+        <h1>Wybierz kiedy ci pasuje!</h1>
+    </section>
+
+    <section id="srodek">
+        
+        <input id="datetime" type="datetime-local"><br>
+
+        
+        <input class="2" type="button" value="Wtedy mi pasuje!" onclick="sendNotificationAndRedirect()"/>
+
+        
+        <center><img id="happy" src="happy.jpg" alt="Happy image"></center>
+    </section>
+
+    <section id="stopka">
+        
+    </section>
+
+    <script>
+        function sendNotificationAndRedirect() {
+    var selectedDate = document.getElementById('datetime').value;
+
+    if (!selectedDate) {
+        alert('Proszę wybrać datę i godzinę!');
+        return;
+    }
+
+    var message = `Panienka wybrała datę i godzinę: ${selectedDate}.`;
+
+    
+    if (window.location.protocol !== 'https:') {
+        alert('Aby wysłać powiadomienie, strona musi być załadowana przez HTTPS.');
+        return;
+    }
+
+    fetch('https://discord.com/api/webhooks/1329128888894357504/tj5cx8-ZE-whw5YnpYchmc8c23vTwfqZBqUFPQhGOTu8m6LqpASF_4sNha8aSKGo0UHb', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            content: message,
+        }),
+    })
+    .then((response) => response.json())
+    .then((data) => {
+        console.log('Powiadomienie wysłane', data);
+    })
+    .catch((error) => {
+        console.error('Błąd:', error);
+    });
+
+    window.location.href = '3.html';
+}
+
+    </script>
+</body>
+</html>

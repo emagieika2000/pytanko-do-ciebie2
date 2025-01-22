@@ -1,0 +1,107 @@
+body{
+    background-color: #FFCCDD;
+    font-family: cursive;
+    font-size: 20px;
+    color: black;
+    text-align: center;
+}
+#naglowek{
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #FFCCDD;
+    font-size: 50px;
+}
+#lewo{
+    background-color: #FFCCDD;
+    width: 400px;
+    float: left;
+
+}
+#srodek{
+    width: 1900px;
+    text-align: center;
+    background-color: #FFCCDD;
+    float: left;
+        
+
+}
+#prawo{
+    background-color: #FFCCDD;
+    width: 400px;
+    float: left;
+}
+#stopka{
+    clear: both;
+    background-color: #FFCCDD;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+}
+input[type="button"]{
+    height: 45px;
+    font-weight: bold;
+    border-radius: 5px;
+    width: 100px;
+}
+#kwiatek{
+    padding: 10px;
+}
+input[type="datetime-local"]{
+    height: 30px;
+    width: 200px;
+    font-weight: bold;
+    border-radius: 5px;
+    font-family: cursive;
+    
+}
+input[class="2"]{
+    height: 30px;
+    font-weight: bold;
+    border-radius: 5px;
+    width: 200px;
+    font-family: cursive;
+    
+}
+#happy{
+    padding: 10px;
+}
+.author
+{
+    display: inline-block;
+    margin-top: 10px;
+
+}
+
+.author a
+{
+    opacity: 0.9;
+}
+
+.author a:hover
+{
+    opacity: 1;
+}
+
+figure
+{
+    margin: 8px;
+    padding: 0;
+
+}
+
+figcaption
+{
+    margin-top: 8px;
+    padding: 0;
+}
+#tak{
+    font-size: 80px;
+}
+input[class="3"]{
+    height: 30px;
+    font-weight: bold;
+    border-radius: 5px;
+    width: 200px;
+    font-family: cursive;
+}

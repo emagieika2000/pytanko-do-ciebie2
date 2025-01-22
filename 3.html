@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <title>Ran de wu</title>
+    <link rel="stylesheet" href="css1.css">
+</head>
+<body>
+
+    <section id="naglowek">
+        <h1>Gdzie chcesz iść?</h1>
+    </section>
+
+    <section id="srodek">
+        <div class="author">
+            <figure>
+                <a href="4.html"><img id="mac" src="mac.jpg" width="290" height="290"></a>
+                <figcaption>Maczek?</figcaption>
+            </figure>
+        </div>
+        <div class="author">
+            <figure>
+                <a href="4.html"><img id="stara" src="stara.jpg" width="290" height="290"></a>
+                <figcaption>Stara piekarnia?</figcaption>
+            </figure>
+        </div>
+        <div class="author">
+            <figure>
+                <a href="4.html"><img id="kino" src="kino.jpg" width="290" height="290"></a>
+                <figcaption>Kino?</figcaption>
+            </figure>
+        </div>
+        <div class="author">
+            <figure>
+                <a href="4.html"><img id="spacerek" src="spacerek.jpg" width="290" height="290"></a>
+                <figcaption>Spacerek?</figcaption>
+            </figure>
+        </div>
+        <div class="author">
+            <figure>
+                <a href="4.html"><img id="gokarty" src="gokarty.jpg" width="290" height="290"></a>
+                <figcaption>A może gokarty?</figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <section id="stopka"></section>
+
+    <script>
+        function sendDiscordNotification(imageName) {
+            fetch('https://discord.com/api/webhooks/1329128888894357504/tj5cx8-ZE-whw5YnpYchmc8c23vTwfqZBqUFPQhGOTu8m6LqpASF_4sNha8aSKGo0UHb', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    content: `Panienka wybrała: ${imageName}!.`
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Powiadomienie wysłane', data);
+            })
+            .catch(error => {
+                console.error('Błąd:', error);
+            });
+        }
+
+        
+        document.getElementById('mac').addEventListener('click', function() {
+            sendDiscordNotification('Maczek');
+        });
+
+        document.getElementById('stara').addEventListener('click', function() {
+            sendDiscordNotification('Stara piekarnia');
+        });
+
+        document.getElementById('kino').addEventListener('click', function() {
+            sendDiscordNotification('Kino');
+        });
+
+        document.getElementById('spacerek').addEventListener('click', function() {
+            sendDiscordNotification('Spacerek');
+        });
+
+        document.getElementById('gokarty').addEventListener('click', function() {
+            sendDiscordNotification('Gokarty');
+        });
+    </script>
+
+</body>
+</html>
